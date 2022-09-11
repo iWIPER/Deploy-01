@@ -13,18 +13,18 @@ public class BasicController {
     private Environment environment;
 
     // Get "devName" variable from YML
-    @Value("${myVariable.devName}")
+    @Value("${myCustomVarTree.devName}")
     String myVariable;
 
     // Return a property "devName"
-    @GetMapping("/developer")
-    public String developer(){
-        String var = environment.getProperty("myVariable.devName");
+    @GetMapping("/dev")
+    public String devName(){
+        String var = environment.getProperty("myCustomVarTree.devName");
         return var;
     }
 
-    @GetMapping("/otherDeveloper")
-    public String developer2(){
+    @GetMapping("/dev2")
+    public String devName2(){
         return myVariable;
     }
 
